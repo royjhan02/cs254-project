@@ -1,0 +1,7 @@
+Benchmark suite results:
+ - SimpleLinear: 6 iterations, 75.95 seconds
+ - MultiVariable: 0 iterations, 17.08 seconds
+ - PolynomialUpdate: 5 iterations, 78.51 seconds
+ - NestedLoop: 2 iterations, 65.89 seconds
+ - ConditionalLoop: 5 iterations, 111.94 seconds
+ - ExponentialDecayLoop: 1 iterations, 25.20 seconds
