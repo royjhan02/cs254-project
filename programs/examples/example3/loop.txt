@@ -1,8 +1,6 @@
-// Initial state:
 x = 0;
 y = 20;
 
-// Loop:
 while (x < y) {
     x = x + 2;
     y = y - 1;

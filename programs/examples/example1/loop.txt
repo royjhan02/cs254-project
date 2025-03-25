@@ -1,7 +1,5 @@
-// Initial state:
 x = 0;
 
-// Loop:
 while (x < 10) {
     x = x + 1;
 }
