@@ -1,0 +1,45 @@
+(error "line 20 column 22: unknown constant if (Bool Bool) ")
+(error "line 26 column 54: unknown constant is-even-or-odd (Int) ")
+sat
+(
+  (define-fun x () Int
+    10)
+  (define-fun x_next () Int
+    0)
+)
+(error "line 35 column 34: unknown sort '-'")
+(error "line 37 column 32: unknown sort '-'")
+(error "line 40 column 28: invalid expression, unexpected ')'")
+(error "line 46 column 40: unknown constant is-even-or-odd (Int) ")
+sat
+(
+  (define-fun x () Int
+    10)
+  (define-fun x_next () Int
+    0)
+)
+(error "line 57 column 17: unknown constant R")
+(error "line 64 column 5: unknown constant R")
+(error "line 68 column 42: unknown constant terminating (Int) ")
+sat
+(
+  (define-fun x () Int
+    10)
+  (define-fun x_next () Int
+    0)
+)
+(error "line 71 column 4: invalid pop command, argument is greater than the current stack depth")
+(error "line 76 column 21: invalid declaration, constant 'x' (with the given signature) already declared")
+(error "line 77 column 26: invalid declaration, constant 'x_next' (with the given signature) already declared")
+(error "line 80 column 10: named expression already defined")
+(error "line 85 column 9: named expression already defined")
+(error "line 89 column 22: unknown constant if (Bool Bool) ")
+(error "line 93 column 54: unknown constant is-even-or-odd (Int) ")
+(error "line 96 column 33: unknown sort '-'")
+(error "line 98 column 32: unknown sort '-'")
+(error "line 100 column 27: invalid expression, unexpected ')'")
+(error "line 104 column 40: unknown constant is-even-or-odd (Int) ")
+(error "line 107 column 16: unknown constant R")
+(error "line 110 column 5: unknown constant R")
+(error "line 112 column 41: unknown constant terminating (Int) ")
+

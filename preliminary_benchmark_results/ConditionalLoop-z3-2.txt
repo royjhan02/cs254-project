@@ -1,0 +1,2 @@
+(error "line 21 column 27: invalid sorted variables: unknown sort 'Nat'")
+

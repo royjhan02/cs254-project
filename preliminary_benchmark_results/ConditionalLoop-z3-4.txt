@@ -1,0 +1,2 @@
+(error "line 26 column 13: unknown constant even_case")
+

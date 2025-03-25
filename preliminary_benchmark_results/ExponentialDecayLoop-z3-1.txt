@@ -1,0 +1,15 @@
+unsupported
+unsupported
+(error "line 11 column 18: unknown constant x")
+unsupported
+(error "line 19 column 21: unknown constant call (Int) ")
+(error "line 25 column 15: unknown constant call (Int) ")
+(error "line 31 column 35: unknown constant guard (Int) ")
+sat
+(
+)
+(error "line 41 column 21: unknown constant guard (Int) ")
+
+; declare-func line: 3 position: 20
+; declare-func line: 4 position: 24
+; define-func line: 15 position: 16

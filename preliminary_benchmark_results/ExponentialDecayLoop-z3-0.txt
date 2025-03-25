@@ -1,0 +1,2 @@
+(error "line 19 column 1: unknown sort 'declare-const'")
+

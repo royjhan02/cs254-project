@@ -1,0 +1,24 @@
+(error "line 6 column 20: invalid sorted variable, '(' expected got /")
+(error "line 23 column 3: unknown sort 'let'")
+(error "line 28 column 3: unknown sort '<'")
+(error "line 28 column 13: invalid bit-vector literal, expecting 'x' or 'b'")
+(error "line 34 column 6: invalid function application, arguments missing")
+(error "line 48 column 49: invalid bit-vector literal, expecting 'x' or 'b'")
+sat
+(
+  (define-fun x () Int
+    100)
+  (define-fun x_next () Int
+    0)
+)
+(error "line 51 column 4: invalid pop command, argument is greater than the current stack depth")
+(error "line 56 column 48: unknown constant transition (Int Int) ")
+sat
+(
+  (define-fun x () Int
+    100)
+  (define-fun x_next () Int
+    0)
+)
+(error "line 60 column 4: invalid pop command, argument is greater than the current stack depth")
+

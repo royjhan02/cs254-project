@@ -1,0 +1,2 @@
+(error "line 46 column 0: invalid assert command, ')' expected")
+

@@ -1,0 +1,4 @@
+(error "line 7 column 20: invalid sorted variable, '(' expected got /")
+(error "line 26 column 25: unknown constant floor (Int) ")
+(error "line 32 column 6: invalid function application, arguments missing")
+

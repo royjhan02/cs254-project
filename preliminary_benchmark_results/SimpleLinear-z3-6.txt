@@ -1,0 +1,22 @@
+(error "line 6 column 24: invalid sorted variable, '(' expected got x")
+(error "line 13 column 20: invalid sorted variable, '(' expected got x")
+(error "line 17 column 25: invalid sorted variable, '(' expected got x")
+(error "line 22 column 13: invalid function application, arguments missing")
+(error "line 29 column 20: unknown constant invariant (Int) ")
+sat
+(
+  (define-fun x () Int
+    10)
+  (define-fun x_next () Int
+    0)
+)
+(error "line 38 column 16: unknown constant guard (Int) ")
+sat
+(
+  (define-fun x () Int
+    10)
+  (define-fun x_next () Int
+    0)
+)
+(error "line 44 column 12: unknown constant R")
+

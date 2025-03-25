@@ -1,0 +1,2 @@
+(error "line 24 column 6: invalid function application, arguments missing")
+

@@ -1,0 +1,55 @@
+(error "line 13 column 11: unknown constant =")
+(error "line 44 column 37: unknown constant guard1 (Int) 
+declared: (declare-fun guard1 (Int Int) Bool) ")
+sat
+(
+  (define-fun x () Int
+    10)
+  (define-fun y () Int
+    20)
+  (define-fun x_next () Int
+    0)
+  (define-fun y_next () Int
+    0)
+)
+(error "line 52 column 26: unknown constant invariant2 (Int) ")
+sat
+(
+  (define-fun x () Int
+    10)
+  (define-fun y () Int
+    20)
+  (define-fun x_next () Int
+    0)
+  (define-fun y_next () Int
+    0)
+)
+(error "line 56 column 4: invalid pop command, argument is greater than the current stack depth")
+(error "line 62 column 22: unknown constant guard1 (Int) 
+declared: (declare-fun guard1 (Int Int) Bool) ")
+sat
+(
+  (define-fun x () Int
+    10)
+  (define-fun y () Int
+    20)
+  (define-fun x_next () Int
+    0)
+  (define-fun y_next () Int
+    0)
+)
+(error "line 70 column 22: unknown constant guard2 (Int) 
+declared: (declare-fun guard2 (Int Int) Bool) ")
+sat
+(
+  (define-fun x () Int
+    10)
+  (define-fun y () Int
+    20)
+  (define-fun x_next () Int
+    0)
+  (define-fun y_next () Int
+    0)
+)
+(error "line 74 column 4: invalid pop command, argument is greater than the current stack depth")
+

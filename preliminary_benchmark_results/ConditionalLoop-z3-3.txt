@@ -1,0 +1,2 @@
+(error "line 21 column 34: unknown sort 'if'")
+
