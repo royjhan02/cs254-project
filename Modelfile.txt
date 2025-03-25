@@ -1,4 +1,4 @@
-FROM llama3.2
+FROM openthinker
 
 SYSTEM """
 System Prompt for Invariant and Ranking Function Synthesis via SMT

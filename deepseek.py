@@ -5,6 +5,7 @@ import re
 import os
 from datetime import datetime
 import time
+import json
 
 def clean_smt_content(content):
     """
@@ -19,8 +20,12 @@ def clean_smt_content(content):
     Returns:
         A cleaned string with valid SMT-LIB lines and only original blank lines.
     """
+    # Remove <think>...</think> blocks
+    cleaned_text = re.sub(r'<think>.*?</think>', '', content, flags=re.DOTALL)
+
+    # Remove non syntactically valid lines
     cleaned_lines = []
-    for line in content.splitlines():
+    for line in cleaned_text.splitlines():
         # If the line is empty (or only whitespace), preserve it.
         if line.strip() == "" and len(cleaned_lines) > 0:
             cleaned_lines.append(line)
@@ -31,22 +36,24 @@ def clean_smt_content(content):
 
 
 def main():
-    if len(sys.argv) < 3:
-        print("Usage: python3 main.py <path to program file> <model>")
+    if len(sys.argv) < 2:
+        print("Usage: python3 deepseek.py <path to program file>")
         return
     
     program_path = sys.argv[1]
-    model = sys.argv[2]
 
     start = time.perf_counter()
 
+    with open("deepseek_primer_copy.json", 'r') as system_file:
+        messages = json.load(system_file)["messages"]
+    
     with open(program_path, 'r') as program_file:
         program = program_file.read()
 
-    messages = [
+    messages += [
         {
             'role': 'user',
-            'content': "Write me and SMT file for this program: " + program,
+            'content': "Here is a program loop\n\n:" + program + "\n\nPlease provide me with a SMT file to check. Do not add any additional information, just the SMT file itself.",
         },
     ]
 
@@ -64,7 +71,7 @@ def main():
     while True:
         print(f"Beginning Iteration {it}")
         print(f"Iteration {it}: Generating SMT file...")
-        response: ChatResponse = chat(model=model, messages=messages)
+        response: ChatResponse = chat(model="deepseek-r1:32b", messages=messages, options={"temperature": 0.6, "top_p": 0.95})
         print(f"Iteration {it}: SMT file generation complete.")
 
         # Write the response content to an SMT file
@@ -100,11 +107,8 @@ def main():
             print(f"Iteration {it}: The checks were not fully satisfied, iterating.")
 
         messages += [
-            {'role': 'assistant', 'content': cleaned_content},
-            {'role': 'user', 'content': results},
+            {'role': 'user', 'content': "Here is the generated SMT file\n\n:" + cleaned_content + "\n\nHere are the Z3 results of the previous SMT file: " + results + "\n\nPlease improve and provide me with a new SMT file to check. Do not add any additional information, just the SMT file itself."},
         ]
-
-        print(results)
 
         it += 1
 
